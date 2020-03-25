@@ -121,7 +121,7 @@ class Classification:
 
             More details on argument values:https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
 
-            :return: trained Decision Tree model
+            :return: trained Random Forest model
             '''
             from sklearn.ensemble import RandomForestClassifier
 
@@ -133,6 +133,36 @@ class Classification:
             self.model = clf
             self.params = clf.get_params()
             self.params['feature_importances'] = clf.feature_importances_
+
+
+    def GradientBoosting(self,loss='deviance',learning_rate=0.1, n_estimators=100, criterion='friedman_mse', max_depth=100, random_state=None, max_features='auto'):
+        '''
+        criterion :argument (optional) critirion to split at each node
+        weights :argument (optional) decision tree weights across classes
+        max_depth :argument (optional) maximum tree depth, the larger the slower the tr
+        random_state :argument (optional) initial classifier seed
+        max_features :argument (optional) maximum number of features to consiter for an internal split
+        warm_start :argument (optional) whether to use previous esstimator as a starting  point or build new estimator from scratch
+        bootstrap :argument (optional) whether to use the whole dataset or part of it to build each estimator
+
+        NOTE 1: Trained model is stored in self.model
+        NOTE 2: self.parameters includes also the feature importances
+
+        Example: clf.RandomForest() or clf.DeciosionTree(criterion='gini',weights=dict), were clf an instance of classifiers.Classification()
+
+        More details on argument values:https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html
+
+        :return: trained Gradient Boosted Tree model
+        '''
+        from sklearn.ensemble import GradientBoostingClassifier
+
+        clf = GradientBoostingClassifier(loss=loss,learning_rate=learning_rate, n_estimators=n_estimators, criterion=criterion, max_depth=max_depth, random_state=random_state, max_features=max_features)
+        clf.fit(self.X_train, self.Y_train)
+
+        self.name = 'gradientboosting'
+        self.model = clf
+        self.params = clf.get_params()
+        self.params['feature_importances'] = clf.feature_importances_
 
 
 

@@ -9,7 +9,7 @@ Currently one class is supported for classification methods
 * SVM
 * Random Forest
 * Decision Tree
-
+* Gradient Boosting Tree
 #### Other Methods 
 
 * Save Model
