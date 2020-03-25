@@ -1,5 +1,5 @@
 # sklearn_wrapper
-A wrapper to simplify the ussage of sklearn for massive experimentation with different modeling methods that provides easy access to the  model parameters
+A wrapper to simplify the usage of sklearn for massive experimentation with different modeling methods that provides easy access to the model parameters
 
 Currently one class is supported for classification methods
 
