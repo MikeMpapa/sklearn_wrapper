@@ -51,10 +51,12 @@ class Classification:
 
 
 
-    def SVM(self,c=1,weights='balanced',kernel='linear'):
+    def SVM(self,c=1,weights='balanced',kernel='linear',probability=False):
         '''
         c :argument (optional) c value  for SVM
         weights :argument (optional) svm weights across classes
+        kernel :argument (optional) svm kernel
+        probability :argument (optional) if True estimates also probabilities. SLower but give probability access during testing
 
         NOTE: Trained model is stored in self.model
 
@@ -66,7 +68,7 @@ class Classification:
         '''
         from sklearn.svm import SVC
 
-        clf = SVC(C= c,class_weight= weights,kernel=kernel)
+        clf = SVC(C= c,class_weight= weights,kernel=kernel,probability=probability)
         clf.fit(self.X_train, self.Y_train)
 
         self.name = 'svm'
