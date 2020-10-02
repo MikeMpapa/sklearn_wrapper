@@ -16,6 +16,10 @@ Currently one class is supported for classification methods
 #### Other Methods 
 
 * Save Model
+  * Stores model name
+  * Model Hyperparameters
+  * The actual Model
+  * The performance results if the model has been tested and results have been added into model.results dict (example:  model.results['accuracy'] = accuracy)
 
 
 ## More methods and functionalities will be added gradually in the near future
