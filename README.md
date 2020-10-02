@@ -3,13 +3,16 @@ A wrapper to simplify the usage of sklearn for massive experimentation with diff
 
 Currently one class is supported for classification methods
 
-## Classifiers Class
-#### Classification Methods
+## Modeling Class
+####  Methods
 
 * SVM
 * Random Forest
 * Decision Tree
 * Gradient Boosting 
+* Linear Regression
+* Elastic Net Regression
+* HMM with GMM Probabilities - requires [hmmlearn lib](https://pypi.org/project/hmmlearn/)
 #### Other Methods 
 
 * Save Model
