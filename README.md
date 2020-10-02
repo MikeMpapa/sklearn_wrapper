@@ -19,8 +19,12 @@ Currently one class is supported for classification methods
   * Stores model name
   * Model Hyperparameters
   * The actual Model
-  * The performance results if the model has been tested and results have been added into model.results dict (example:  model.results['accuracy'] = accuracy)
-
+  * The performance results if the model has been tested and results have been added into model.results dict - examples:
+   ```python
+   model.results['accuracy'] = accuracy_value
+   model.results['r^2'] = rSquared_value
+   model.results['custom_metric_name'] = custom_metric_value
+   ```
 
 ## More methods and functionalities will be added gradually in the near future
 
